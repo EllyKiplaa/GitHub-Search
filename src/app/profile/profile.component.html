@@ -1,25 +1,54 @@
+<div class="container-slide">
+    <div class="jumbotron">
+        <h1><img src="https://bit.ly/2E1b76l" width="300px"></h1>
+        <h4 class="git">"This is a search engine for github-accounts that allows the user to search for anyones account
+            you can try"</h4>
+    </div>
+
+<div class="container">
+  <hr>
 <div *ngIf="profile">
+  <div class="row">
+      <div class="col-sm-4"><br>
+    <img src="{{profile.avatar_url}}"  height="200px" width="200px" alt="Profile_image">
+  </div><br>
+</div>
+
   <div class="panel panel panel-default">
     <div class="panel-heading">
       <h5>{{profile.name}}</h5> ({{profile.login}})
-      <h5><span *ngIf="profile.company"> Works at {{profile.company}}</span></h5>
+      <h5 *ngIf="profile.company"> Works at {{profile.company}}</h5>
       <h5>{{profile.location}} </h5>
     </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="{{profile.avatar_url}}"  height="200px" width="200px" alt="Profile_image">
-        </div>
-      </div><br>
-      <div class="col-sm-5">
+    <div class="row">
+          <div class="panel-body">
+      <div class="text-center col-md-6">
         <ul class='list-group'>
           <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
           <li class="list-group-item" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
+          <li class="list-group-item" *ngIf="profile.twitter_username" >Twitter <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
           <li class="list-group-item" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
-          <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+          <li class="list-group-item" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
         </ul>
       </div>
-    </div>
+    </div><br>
   </div>
 
-</div>
+      <div class="col-md-4 col-md-6">
+        <div class="row">
+          <hr>
+          <h3 class="card-body">Repositories</h3>
+          <p><br>
+            <span class="btn-info btn-lg">  {{ profile.followers }} Followers</span>
+            <span class="btn-secondary btn-lg"> Following {{ profile.following }}</span>
+            <span class="btn-primary btn-lg">Repositories {{ profile.public_repos }}</span>
+          </p>
+         <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn-success btn-lg"  > View profile on github</button> </a></p>
+        </div>
+       <div class="card" style="width: 18rem;">
+          <div class="card-body" *ngFor = "let repo of repos">
+            <h2>{{repo.name}}</h2>
+            <a href="{{repo.html_url}}" target="_blank" class="btn btn-primary">View this project</a>
+            <p class="card-text">{{repo.description }}</p>
+          </div>
+     </div>
