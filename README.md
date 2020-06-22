@@ -1,5 +1,22 @@
 # GitHubSearch
-# Author
+
+## Author
+~EliKiplangat
+
+## Technologies Used
+It is built using Angular JS, HTML, Bootstrap, GitHub ,Nodejs,VsCode.
+
+## Live Website
+View the complete site [here](https://ellykiplaa.github.io/Angular-App/)
+
+## Features
+
+1. Allows users to to search the github profile users and repositories.
+2. User is able to view all the repositories and followers.
+
+
+## Contributors
+ - Eli Kiplangat 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
