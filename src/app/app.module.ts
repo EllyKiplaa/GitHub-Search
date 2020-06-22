@@ -5,19 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProfileService } from './profile.service';
-import { HighlightDirective } from './highlight.directive';
+import { ProfileService } from '../app/profileService';
+import { GoalFormComponent } from './goal-form/goal-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    HighlightDirective,
+    GoalFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]

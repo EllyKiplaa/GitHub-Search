@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 
@@ -9,10 +10,11 @@ import { HttpClient} from '@angular/common/http'
 })
 export class ProfileService {
 private username:string;
-private clientsecret ='eb259cfd44fa48f477f4b743647832811217805b';
+private client_id='dcca90a7bb34f53cf6ee';
+private client_secret ='eb259cfd44fa48f477f4b743647832811217805b';
 
   constructor(private http:HttpClient){
-    console.log("service is now ready!");
+    console.log(" services is working!");
     this.username ='EllyKiplaa';
 
   }
@@ -22,7 +24,10 @@ private clientsecret ='eb259cfd44fa48f477f4b743647832811217805b';
   }
 
     getProfileRepositories(){
-      return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_secret="+ this.clientsecret);
+      return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_secret=");
+  }
+  updateProfile(username:string){
+    this.username = username;
   }
 
 }
