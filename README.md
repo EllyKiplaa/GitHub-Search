@@ -7,7 +7,7 @@
 It is built using Angular JS, HTML, Bootstrap, GitHub ,Nodejs,VsCode.
 
 ## Live Website
-View the complete site [here](https://ellykiplaa.github.io/Angular-App/)
+View the complete site [here]( https://ellykiplaa.github.io/GitHub-Search/)
 
 ## Features
 
